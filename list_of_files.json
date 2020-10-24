@@ -1,0 +1,9 @@
+[
+    "ProductInventory",
+    "ProductDocument",
+    "ProductCostHistory",
+    "ProductCategory",
+    "ProductSubcategory",
+    "Prod",
+    "ProductListPriceHistory"
+]
