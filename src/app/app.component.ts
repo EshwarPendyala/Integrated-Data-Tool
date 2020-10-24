@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'IntegratedDataTool';
+  usernameValid:string = localStorage.getItem('username')
+
+  logout() {
+    localStorage.removeItem('username')
+    window.open('/',"_self")
+  }
 }

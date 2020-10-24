@@ -1,0 +1,86 @@
+<style>
+    thead{
+        background-color: rgb(13, 119, 235);
+    }
+</style>
+<form>
+    <div class="form-group row mx-1">
+            <label for="datasetSearch" class="col-sm col-form-label"></label>
+            <div class="col-sm-8" style="text-align: center;">
+                <br><br>
+                <input type="text" class="form-control mr-sm-2" #datasetSearch placeholder="Search For Datasets and Data Resources">
+                <br>
+                <button type="button" class="btn btn-primary" (click)="getTableMetadata(datasetSearch.value)" style="margin: 10px;">Get Table Metadata</button>
+                <button type="button" class="btn btn-primary" (click)="getListOfDatasets()" style="margin: 10px;">Get List Of Tables</button>
+                <button type="button" class="btn btn-primary" (click)="getColumnMetadata(datasetSearch.value)" style="margin: 10px;">Get Column Metadata</button>
+                <br>
+            </div>
+            <div class="col-sm"></div>
+    </div>
+</form>
+<div class="container">
+    <table class="table table-bordered table-hover" *ngIf="columnMetadata">
+        <thead class="">
+            <tr>
+                <th scope="col">Column Name</th>
+                <th scope="col">Datatype</th>
+                <th scope="col">Missing Value Count</th>
+                <th scope="col">Mean</th>
+                <th scope="col">Max</th>
+                <th scope="col">Min</th>
+                <th scope="col">Maximum String Length</th>
+                <th scope="col">Distinct Value Count</th>
+                <th scope="col">Standard Deviation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of columnMetadata">
+                <th scope="row">{{item['columnName']}}</th>
+                <td>{{item['dataType']}}</td>
+                <td>{{item['missingValueCount']}}</td>
+                <td>{{item['meanValue']}}</td>
+                <td>{{item['maxValue']}}</td>
+                <td>{{item['minValue']}}</td>
+                <td>{{item['maxLengthOfString']}}</td>
+                <td>{{item['numberOfDistinctValues']}}</td>
+                <td>{{item['standardDeviation']}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <table class="table table-bordered table-hover" *ngIf="listOfdatasets">
+        <thead class="">
+            <tr>
+                <th scope="col">Tables</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listOfdatasets">
+                <td>{{item}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <table class="table table-bordered table-hover" *ngIf="tableMetadata">
+        <thead class="">
+            <tr>
+                <th scope="col">Table Name</th>
+                <th scope="col">Number Of Rows</th>
+                <th scope="col">Number of Columns</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{tableMetadata['tableName']}}</td>
+                <td>{{tableMetadata['numberOfRows']}}</td>
+                <td>{{tableMetadata['numberOfColumns']}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

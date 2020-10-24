@@ -1,0 +1,18 @@
+# print("*****************************************************************************************************************")
+	# print(queryText)
+	# print("*****************************************************************************************************************")
+	# query_all = {'size': 10_000,'query': {'match_all': {}}}
+	# resp = client.search(
+    #     index="some_index",
+    #     body=query_all
+    # )
+	# print("search() response:", json.dumps(resp, indent=4))
+	# responseHits = resp["hits"]["hits"]
+	# print("*****************************************************************************************************************")
+	# column_metadata = []
+	# for obj in responseHits:
+	# 	if obj["_source"]["tableName"].lower() == queryText.lower():
+	# 		column_metadata.append(obj["_source"])
+	# print("*****************************************************************************************************************")
+	# print(column_metadata)
+	# data={}

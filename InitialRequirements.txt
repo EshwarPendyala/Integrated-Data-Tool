@@ -1,0 +1,39 @@
+Who will use this tool
+--
+Data scientists, Data Engineers who are new to or starting with the dataset
+ 
+Source systems
+--
+any dataset of files, DB
+ 
+metadata discovery
+--
+sample and profile datasets to get the metadata
+ 
+data file/table stats - size, number of rows, number of columns
+identification of datatypes
+identification of stats
+column stats - name, datatype, min/max, std dev, distinct values, count of null/missing values, minLen/MaxLen, date/formats
+ 
+data discovery
+--
+tags tables with suitable tags / classes like 'customer', 'employee', 'sensitive', 'confidential'
+ 
+ 
+metadata queries
+--
+List of tables with most number of rows
+List of tables with size > n GB
+List of tables with overlapping data in certain columns with 50% overlap
+List of tables commonly used in joins with same column name or overlapping data
+Find all string/numeric columns
+ 
+ 
+data queries
+--
+List of tables/columns having column data = 'IBM'
+ 
+Machine Learning based categorization of data - data tagging e.g. sensitive/general/CCard, names, phone/email..table-wise/column-wise
+Duplicate data identification - by grouping, by counting, by exact col-to-col match
+ 
+DASK - python lib for parallel processing
